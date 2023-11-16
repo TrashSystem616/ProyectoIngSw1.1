@@ -283,12 +283,12 @@ Public Class Form3
         For Each fila As DataGridViewRow In DataGridView2.Rows
             Dim ProductoID As Integer = CInt(fila.Cells(1).Value)
             Dim CantidadVendida As Integer = CInt(fila.Cells(0).Value)
-            Dim PrecioVenta As Decimal = CDec(fila.Cells(3).Value)
+            Dim PrecioVenta As Decimal = CDec(fila.Cells(3).Value) * CInt(fila.Cells(0).Value)
 
             Dim GerenteId = ID
             Dim IDVenta = 0
 
-            Dim FechaVenta = Label7.Text
+            Dim FechaVenta = ComboBox1.Text
             Dim Cliente = TextBox1.Text
 
             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
@@ -640,34 +640,6 @@ Public Class Form3
                 End If
             End If
         End If
-
-        'Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
-        'conexion.Open()
-
-        ' Verificar si la cantidad de piezas en el inventario es suficiente
-
-
-        ' Dim VentaID = 0
-        'Dim DiaVenta = Label7.Text
-
-        'For Each fila As DataGridViewRow In DataGridView2.Rows
-        'Dim ProductoID = CInt(fila.Cells(0).Value)
-        'Dim CantidadVendida =
-
-        'Next
-
-        'Using commandVerificarPiezas As New SqlCommand(consultaVerificarPiezas, conexion)
-        ' Utiliza ExecuteScalar para obtener un único valor (en este caso, la cantidad de piezas)
-        'Dim cantidadPiezas As Integer = Convert.ToInt32(commandVerificarPiezas.ExecuteScalar())
-
-        ' Aquí puedes poner tu lógica para verificar si la cantidad es suficiente
-        ' Por ejemplo, comparar con la cantidad que estás intentando vender
-
-        ' Después de verificar, puedes realizar la actualización del inventario u otras acciones necesarias
-
-        'MessageBox.Show("¡Venta exitosa! La venta se ha realizado con éxito.", "Venta Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'End Using
-        'End Using
 
     End Sub
 End Class

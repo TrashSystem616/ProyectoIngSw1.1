@@ -9,4 +9,8 @@
     Private Sub InventarioGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InventarioGeneralToolStripMenuItem.Click
         Form4.ShowDialog()
     End Sub
+
+    Private Sub PlanificacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanificacionToolStripMenuItem.Click
+        Form6.ShowDialog()
+    End Sub
 End Class
