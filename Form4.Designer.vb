@@ -61,7 +61,7 @@ Partial Class Form4
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Location = New System.Drawing.Point(7, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(588, 161)
+        Me.Panel1.Size = New System.Drawing.Size(949, 161)
         Me.Panel1.TabIndex = 0
         '
         'GroupBox1
@@ -72,7 +72,7 @@ Partial Class Form4
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(5, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(574, 146)
+        Me.GroupBox1.Size = New System.Drawing.Size(936, 146)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -95,7 +95,7 @@ Partial Class Form4
         Me.DataGridView1.Location = New System.Drawing.Point(4, 39)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(564, 73)
+        Me.DataGridView1.Size = New System.Drawing.Size(926, 73)
         Me.DataGridView1.TabIndex = 5
         '
         'Label1
@@ -346,7 +346,7 @@ Partial Class Form4
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkRed
-        Me.ClientSize = New System.Drawing.Size(603, 356)
+        Me.ClientSize = New System.Drawing.Size(1076, 370)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
