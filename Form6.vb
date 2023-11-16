@@ -144,7 +144,7 @@ Public Class Form6
             End If
 
             'Bisquets'
-            If Not String.IsNullOrEmpty(TextBox7.Text) AndAlso Integer.TryParse(TextBox7.Text, Modificacion) Then
+            If Not String.IsNullOrEmpty(TextBox9.Text) AndAlso Integer.TryParse(TextBox9.Text, Modificacion) Then
                 If Modificacion > 0 Then
                     Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                         conexion.Open()
