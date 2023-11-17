@@ -13,4 +13,8 @@
     Private Sub PlanificacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanificacionToolStripMenuItem.Click
         Form6.ShowDialog()
     End Sub
+
+    Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
+        Form7.ShowDialog()
+    End Sub
 End Class

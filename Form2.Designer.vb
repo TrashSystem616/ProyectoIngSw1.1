@@ -23,6 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -33,7 +34,6 @@ Partial Class Form2
         Me.InventarioGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,6 +49,16 @@ Partial Class Form2
         Me.MenuStrip2.TabIndex = 1
         Me.MenuStrip2.Text = "MenuStrip2"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.ProyectoIngSw.My.Resources.Resources.LogoKFC
+        Me.PictureBox1.Location = New System.Drawing.Point(24, 37)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(285, 235)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripSeparator1, Me.PlanificacionToolStripMenuItem})
@@ -61,19 +71,19 @@ Partial Class Form2
         '
         Me.ToolStripMenuItem2.Image = Global.ProyectoIngSw.My.Resources.Resources.clipboard_regular_24
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(142, 22)
         Me.ToolStripMenuItem2.Text = "Informe"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(139, 6)
         '
         'PlanificacionToolStripMenuItem
         '
         Me.PlanificacionToolStripMenuItem.Image = Global.ProyectoIngSw.My.Resources.Resources.cylinder_solid_24
         Me.PlanificacionToolStripMenuItem.Name = "PlanificacionToolStripMenuItem"
-        Me.PlanificacionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanificacionToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.PlanificacionToolStripMenuItem.Text = "Planificacion"
         '
         'ToolStripMenuItem3
@@ -88,7 +98,7 @@ Partial Class Form2
         '
         Me.VentasToolStripMenuItem.Image = Global.ProyectoIngSw.My.Resources.Resources.cart_regular_24
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'ToolStripMenuItem4
@@ -120,16 +130,6 @@ Partial Class Form2
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
         Me.ToolStripMenuItem6.Size = New System.Drawing.Size(97, 22)
         Me.ToolStripMenuItem6.Text = "Caja"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.ProyectoIngSw.My.Resources.Resources.LogoKFC
-        Me.PictureBox1.Location = New System.Drawing.Point(24, 37)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(285, 235)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'Form2
         '
