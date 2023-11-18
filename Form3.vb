@@ -349,6 +349,7 @@ Public Class Form3
         TextBox2.Text = ""
         PictureBox1.Image = My.Resources.LogoKFC
         DataGridView2.Rows.Clear()
+
         sumatotal = 0
         tirastotal = 0
         bigkrunchtotal = 0
@@ -813,7 +814,7 @@ Public Class Form3
 
             ' Verificar si la venta fue exitosa
             If ventaExitosa Then
-                MessageBox.Show("¡Venta exitosa! Todas las ventas se han realizado con éxito.", "Ventas Exitosas", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+                MessageBox.Show("¡Venta exitosa! Todas las ventas se han realizado con éxito.", "Ventas Exitosas", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 ' Sección del código para registrar las ventas en la base de datos '
                 For Each fila As DataGridViewRow In DataGridView2.Rows

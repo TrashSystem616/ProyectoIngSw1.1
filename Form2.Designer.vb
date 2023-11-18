@@ -23,7 +23,6 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -34,6 +33,7 @@ Partial Class Form2
         Me.InventarioGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,19 +45,9 @@ Partial Class Form2
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip2.Name = "MenuStrip2"
         Me.MenuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip2.Size = New System.Drawing.Size(334, 24)
+        Me.MenuStrip2.Size = New System.Drawing.Size(1264, 24)
         Me.MenuStrip2.TabIndex = 1
         Me.MenuStrip2.Text = "MenuStrip2"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.ProyectoIngSw.My.Resources.Resources.LogoKFC
-        Me.PictureBox1.Location = New System.Drawing.Point(24, 37)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(285, 235)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'ToolStripMenuItem1
         '
@@ -71,19 +61,19 @@ Partial Class Form2
         '
         Me.ToolStripMenuItem2.Image = Global.ProyectoIngSw.My.Resources.Resources.clipboard_regular_24
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(142, 22)
         Me.ToolStripMenuItem2.Text = "Informe"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(139, 6)
         '
         'PlanificacionToolStripMenuItem
         '
         Me.PlanificacionToolStripMenuItem.Image = Global.ProyectoIngSw.My.Resources.Resources.cylinder_solid_24
         Me.PlanificacionToolStripMenuItem.Name = "PlanificacionToolStripMenuItem"
-        Me.PlanificacionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanificacionToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.PlanificacionToolStripMenuItem.Text = "Planificacion"
         '
         'ToolStripMenuItem3
@@ -131,15 +121,27 @@ Partial Class Form2
         Me.ToolStripMenuItem6.Size = New System.Drawing.Size(97, 22)
         Me.ToolStripMenuItem6.Text = "Caja"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.ProyectoIngSw.My.Resources.Resources.LogoKFC
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 37)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1228, 630)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Brown
-        Me.ClientSize = New System.Drawing.Size(334, 274)
+        Me.ClientSize = New System.Drawing.Size(1264, 679)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximumSize = New System.Drawing.Size(1280, 720)
+        Me.MinimumSize = New System.Drawing.Size(1280, 718)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu"
