@@ -231,24 +231,26 @@ Public Class Form3
             End If
 
             Dim existe As Boolean
-
             existe = False
             valorColumna = 0
-            While ((valorColumna < DataGridView2.Rows.Count)) And (Not (existe))
 
+            While (valorColumna < DataGridView2.Rows.Count) AndAlso (Not existe)
                 If (DataGridView2.Rows(valorColumna).Cells(1).Value = DataGridView1.Rows(fila).Cells(0).Value) Then
                     existe = True
-                    Dim piezas As Integer = DataGridView2.Rows(valorColumna).Cells(0).Value
+                    Dim piezas As Integer = CInt(DataGridView2.Rows(valorColumna).Cells(0).Value)
                     DataGridView2.Rows(valorColumna).Cells(0).Value = piezas + 1
-
                 End If
-                valorColumna = valorColumna + 1
+
+                valorColumna += 1
             End While
-            'Si no existe'
-            If Not (existe) Then
-                DataGridView2.Rows.Add(0, DataGridView1.Rows(fila).Cells(0).Value, DataGridView1.Rows(fila).Cells(1).Value, DataGridView1.Rows(fila).Cells(2).Value, DataGridView1.Rows(fila).Cells(3).Value)
+
+            ' Si no existe, agrega una nueva fila con piezas inicializadas a 1 '
+            If Not existe Then
+                DataGridView2.Rows.Add(1, DataGridView1.Rows(fila).Cells(0).Value, DataGridView1.Rows(fila).Cells(1).Value, DataGridView1.Rows(fila).Cells(2).Value, DataGridView1.Rows(fila).Cells(3).Value)
             End If
+
             DataGridView2.Visible = True
+
 
         End If
     End Sub
@@ -296,6 +298,7 @@ Public Class Form3
         TextBox2.Text = ""
         PictureBox1.Image = My.Resources.LogoKFC
         DataGridView2.Rows.Clear()
+        sumatotal = 0
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -322,7 +325,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = sumatotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -337,6 +340,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            piezas = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
