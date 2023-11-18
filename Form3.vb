@@ -35,17 +35,68 @@ Public Class Form3
             ' Actualizar la sumaTotal basándote en el valorColumna
             Select Case valorColumna
                 Case 1
-                    sumaTotal += 8
+                    sumatotal += 8
+                    purefamiliartotal += 1
+                    ensaladafamiliartotal += 1
+                    bisquetstotal += 3
                 Case 2
-                    sumaTotal += 10
+                    sumatotal += 10
+                    purefamiliartotal += 1
+                    ensaladafamiliartotal = +1
+                    bisquetstotal += 4
+
                 Case 3
-                    sumaTotal += 12
-                Case 4, 5, 6, 7, 8, 9, 10, 11
-                    ' Actualiza según tus necesidades
+                    sumatotal += 12
+                    purefamiliartotal += 1
+                    ensaladafamiliartotal += 1
+                    bisquetstotal += 4
+                Case 4
+                    tirastotal += 9
+                    papasmedianas += 1
+
+                Case 5
+                    bigkrunchtotal += 1
+                    papasmedianastotal += 1
+                    refrescototal += 1
+
+                Case 6
+                    sumatotal += 2
+                    pureindividualtotal += 1
+                    refrescototal += 1
+
+                Case 7
+                    sumatotal += 3
+                    pureindividualtotal += 1
+                    ensaladaindividualtotal += 1
+                    refrescototal += 1
+
+                Case 8
+                    sumatotal += 4
+                    pureindividualtotal += 1
+                    ensaladaindividualtotal += 1
+                    refrescototal += 1
+
+                Case 9
+                    tirastotal += 2
+                    pureindividualtotal += 1
+                    refrescototal += 1
+
+                Case 10
+                    tirastotal += 3
+                    pureindividualtotal += 1
+                    ensaladaindividualtotal += 1
+                    refrescototal += 1
+
+                Case 11
+                    tirastotal += 4
+                    pureindividualtotal += 1
+                    ensaladaindividualtotal += 1
+                    refrescototal += 1
             End Select
 
             ' Muestra la suma total actualizada
-            MessageBox.Show("La suma total es: " & sumaTotal.ToString(), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("La suma total es: " & sumatotal.ToString(), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("La suma total es: " & tirastotal.ToString(), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
 
@@ -299,6 +350,16 @@ Public Class Form3
         PictureBox1.Image = My.Resources.LogoKFC
         DataGridView2.Rows.Clear()
         sumatotal = 0
+        tirastotal = 0
+        bigkrunchtotal = 0
+        ensaladafamiliar = 0
+        purefamiliartotal = 0
+        ensaladaindividualtotal = 0
+        pureindividualtotal = 0
+        bisquetstotal = 0
+        refrescototal = 0
+        papasmedianastotal = 0
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -368,7 +429,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = tirastotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -383,6 +444,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            tiras = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -411,7 +473,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = purefamiliartotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -426,6 +488,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            purefamiliar = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -454,7 +517,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = pureindividualtotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -469,6 +532,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            pureindividual = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -498,7 +562,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = ensaladafamiliartotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -513,6 +577,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            ensaladafamiliar = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -541,7 +606,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = ensaladaindividualtotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -556,6 +621,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            ensaladaindvidual = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -583,7 +649,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = bisquetstotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -598,6 +664,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            bisquets = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -625,7 +692,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = bigkrunchtotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -640,6 +707,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            bigkrunch = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -667,7 +735,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = refrescototal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -682,6 +750,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            refresco = cantidadARestar
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -710,7 +779,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2 '
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida '
-                            Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
+                            Dim cantidadARestarPorProducto As Integer = papasmedianastotal
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
                                 conexion.Open()
@@ -725,6 +794,7 @@ Public Class Form3
                                         Using command As New SqlCommand(query, conexion)
                                             command.Parameters.AddWithValue("@CantidadARestar", cantidadARestarPorProducto)
                                             command.ExecuteNonQuery()
+                                            papasmedianas = cantidadARestarPorProducto
                                         End Using
                                     Else
                                         ' Si no hay suficientes piezas en el inventario, cambiar ventaExitosa a False
@@ -743,7 +813,7 @@ Public Class Form3
 
             ' Verificar si la venta fue exitosa
             If ventaExitosa Then
-                MessageBox.Show("¡Venta exitosa! Todas las ventas se han realizado con éxito.", "Ventas Exitosas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("¡Venta exitosa! Todas las ventas se han realizado con éxito.", "Ventas Exitosas", MessageBoxButtons.OK, MessageBoxIcon.Hand)
 
                 ' Sección del código para registrar las ventas en la base de datos '
                 For Each fila As DataGridViewRow In DataGridView2.Rows
