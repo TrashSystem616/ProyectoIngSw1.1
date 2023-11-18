@@ -28,6 +28,27 @@ Public Class Form3
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        If e.RowIndex >= 0 Then
+            ' Obtén el valor de la celda de la columna deseada
+            Dim valorColumna As Integer = Convert.ToInt32(DataGridView1.Rows(e.RowIndex).Cells("ProductoID").Value)
+
+            ' Actualizar la sumaTotal basándote en el valorColumna
+            Select Case valorColumna
+                Case 1
+                    sumaTotal += 8
+                Case 2
+                    sumaTotal += 10
+                Case 3
+                    sumaTotal += 12
+                Case 4, 5, 6, 7, 8, 9, 10, 11
+                    ' Actualiza según tus necesidades
+            End Select
+
+            ' Muestra la suma total actualizada
+            MessageBox.Show("La suma total es: " & sumaTotal.ToString(), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+
         ' Verifica si la celda clicada está en una fila válida (no en el encabezado)
         If e.RowIndex >= 0 Then
             Dim fila As Integer
@@ -44,6 +65,7 @@ Public Class Form3
                 ComboBox4.Text = 1 'Valor del pure familiar'
                 ComboBox5.Text = 1 'Valor de la ensalada familiar'
                 ComboBox6.Text = 3 'valor de los bisquets'
+
                 ComboBox7.Text = "" 'valor de la hamburgesa'
                 ComboBox8.Text = "" 'valor del refresco de lata'
                 ComboBox9.Text = "" 'valor de las papas '
@@ -300,7 +322,6 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida
-                            cantidadARestar = cantidadARestar + cantidadARestar
                             Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
