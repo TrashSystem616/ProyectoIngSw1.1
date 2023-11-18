@@ -71,19 +71,19 @@ Partial Class Form2
         '
         Me.ToolStripMenuItem2.Image = Global.ProyectoIngSw.My.Resources.Resources.clipboard_regular_24
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(142, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
         Me.ToolStripMenuItem2.Text = "Informe"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(139, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
         '
         'PlanificacionToolStripMenuItem
         '
         Me.PlanificacionToolStripMenuItem.Image = Global.ProyectoIngSw.My.Resources.Resources.cylinder_solid_24
         Me.PlanificacionToolStripMenuItem.Name = "PlanificacionToolStripMenuItem"
-        Me.PlanificacionToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.PlanificacionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PlanificacionToolStripMenuItem.Text = "Planificacion"
         '
         'ToolStripMenuItem3
@@ -98,7 +98,7 @@ Partial Class Form2
         '
         Me.VentasToolStripMenuItem.Image = Global.ProyectoIngSw.My.Resources.Resources.cart_regular_24
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'ToolStripMenuItem4

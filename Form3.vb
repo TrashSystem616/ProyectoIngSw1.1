@@ -300,6 +300,7 @@ Public Class Form3
                             ' Obtener el valor de la cantidad vendida desde la fila actual del DataGridView2
                             Dim cantidadVendida As Integer = CInt(fila.Cells(0).Value)
                             ' Calcular la cantidad a restar multiplicando la cantidad ingresada por la cantidad vendida
+                            cantidadARestar = cantidadARestar + cantidadARestar
                             Dim cantidadARestarPorProducto As Integer = cantidadARestar * cantidadVendida
 
                             Using conexion As SqlConnection = ConexionBD.ObtenerConexion()
@@ -330,7 +331,6 @@ Public Class Form3
                     End If
                 End If
             End If
-
 
             ' Esto es para las Tiras '
             If Not String.IsNullOrEmpty(ComboBox3.Text) Then

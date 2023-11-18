@@ -33,11 +33,12 @@ Partial Class Form7
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -152,12 +153,13 @@ Partial Class Form7
         Me.Panel3.Controls.Add(Me.GroupBox3)
         Me.Panel3.Location = New System.Drawing.Point(672, 12)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(215, 229)
+        Me.Panel3.Size = New System.Drawing.Size(215, 162)
         Me.Panel3.TabIndex = 3
         '
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.SystemColors.Window
+        Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.ComboBox3)
@@ -166,9 +168,28 @@ Partial Class Form7
         Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(207, 221)
+        Me.GroupBox3.Size = New System.Drawing.Size(207, 154)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Jose Luis", "Gerardo Aguirre", "Hugo Valentin"})
+        Me.ComboBox2.Location = New System.Drawing.Point(92, 78)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(109, 21)
+        Me.ComboBox2.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(6, 79)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(80, 20)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Gerente:"
         '
         'ComboBox3
         '
@@ -199,24 +220,14 @@ Partial Class Form7
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Filtros:"
         '
-        'Label2
+        'Button1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 79)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 20)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Gerente:"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Jose Luis", "Gerardo Aguirre", "Hugo Valentin"})
-        Me.ComboBox2.Location = New System.Drawing.Point(92, 78)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(109, 21)
-        Me.ComboBox2.TabIndex = 7
+        Me.Button1.Location = New System.Drawing.Point(10, 125)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(190, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Aplicar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form7
         '
@@ -261,4 +272,5 @@ Partial Class Form7
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class

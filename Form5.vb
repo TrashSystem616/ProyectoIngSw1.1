@@ -1,3 +1,4 @@
-﻿Public Class Form5
-
+﻿Public Class form5
+    Private Sub form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    End Sub
 End Class

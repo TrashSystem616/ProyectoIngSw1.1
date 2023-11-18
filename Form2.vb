@@ -17,4 +17,8 @@
     Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
         Form7.ShowDialog()
     End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        form5.ShowDialog()
+    End Sub
 End Class
